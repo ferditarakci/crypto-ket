@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Instagram",
+		"link": "https://www.instagram.com",
+		"icon": "/assets/images/instagram.svg"
+	},
+	{
+		"title": "Twitter",
+		"link": "https://twitter.com",
+		"icon": "/assets/images/twitter.svg"
+	},
+	{
+		"title": "Telegram",
+		"link": "https://www.telegram.com",
+		"icon": "/assets/images/telegram.svg"
+	},
+	{
+		"title": "Discord",
+		"link": "https://www.discord.com",
+		"icon": "/assets/images/discord.svg"
+	}
+]

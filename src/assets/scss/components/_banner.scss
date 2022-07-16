@@ -1,0 +1,38 @@
+.banner {
+	&-inner {
+		overflow: hidden;
+		position: relative;
+		height: 300px;
+		border-radius: 25px;
+		background: var(--pink-linear);
+	
+		&::before {
+			position: absolute;
+			left: -105px;
+			top: -105px;
+			width: 260px;
+			height: 260px;
+			content: "";
+			border-radius: 50%;
+			background: rgba(white, .2);
+		}
+	
+		&::after {
+			position: absolute;
+			right: -50px;
+			bottom: -110px;
+			width: 320px;
+			height: 320px;
+			content: "";
+			border-radius: 50%;
+			background: rgba(white, .2);
+		}
+	}
+
+	&-title {
+		margin: 0;
+		line-height: 1;
+		font-size: 48px;
+		font-weight: 600;
+	}
+}

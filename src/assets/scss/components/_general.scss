@@ -1,0 +1,130 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: var(--poppins);
+	color: white;
+	background: var(--black4);
+}
+
+a {
+    color: inherit;
+}
+
+.section {
+	+.section {
+		margin-top: 60px;
+	}
+
+	&-title {
+		margin-bottom: 1.5rem;
+		font-size: 1.75rem;
+		font-weight: 600;
+	}
+}
+
+main {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.container {
+	width: 992px;
+}
+
+.nav-link {
+	color: white;
+
+	&:focus,
+	&:hover {
+		color: rgba(white, .7);
+	}
+}
+
+.btn {
+	display: inline-flex;
+	height: 40px;
+	font-size: .875rem;
+	font-weight: 600;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	transition: all .3s linear;
+
+	&:focus {
+		border: 0;
+		box-shadow: none;
+	}
+
+	&:focus-visible,
+	&:any-link:focus-visible {
+		outline: 0 !important;
+	}
+
+	>span {
+		position: relative;
+		z-index: 1;
+		display: block;
+		white-space: nowrap;
+	}
+}
+
+.btn-pink {
+	position: relative;
+    color: white !important;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	border: none;
+	background: var(--pink-linear);
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		padding: 2px;
+		content: "";
+		opacity: 0;
+		border-radius: 10px;
+		background: var(--pink-linear-reverse);
+		transition: all .2s linear;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	&-transparent {
+		background: none;
+
+		&::before {
+			opacity: 1;
+			background: var(--pink-linear);
+		}
+
+		&::before {
+			-webkit-mask: linear-gradient(#fff 1 1) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+		}
+
+		&:hover {
+			&::before {
+				background-image: var(--pink-linear-reverse);
+			}
+		}
+
+		@supports (background-clip: text) or (-webkit-background-clip: text) {
+			>span {
+				background-image: var(--pink-linear);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+}
